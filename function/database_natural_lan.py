@@ -3,12 +3,6 @@ import pandas as pd
 import xml.etree.cElementTree as ET
 from function.string import * 
 
-meta_data_natural = []
-class root_metadata:
-    def __init__(self):
-        self.meta_data_lake = []
-        self.size = 0
-
 class meta_data_xml:
     def __init__(self, tag_name, actual_value):
         self.tag_name = tag_name
@@ -18,9 +12,10 @@ class meta_data_db:
     def __init__(self, tag_name, value):
         self.tag_name = tag_name
         self.value = value
+        self.meta_data_lake_score = []
 
 def metadata_db_controlplan(size):
-    global meta_data_temp
+    meta_data_natural = []
     cnxn = pymssql.connect(server= HOST, port= PORT\
                         , database= DB_GET\
                         , user= USER\
@@ -37,14 +32,12 @@ def metadata_db_controlplan(size):
     return meta_data_natural
 
 def parse_metadata_xml(ce_file):
-    meta_temp = root_metadata()
+    meta_temp =  []
     parsed = ET.parse(ce_file)
     root = parsed.getroot()
-    size =0
     for step in root:
         try:
-            meta_temp.meta_data_lake.append(meta_data_xml(step.attrib.get('name'), step[1].text))
-            meta_temp.size +=1
+            meta_temp.append(meta_data_xml(step.attrib.get('name'), step[1].text))
         except:
             {}
     return meta_temp
