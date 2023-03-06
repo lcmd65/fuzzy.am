@@ -6,6 +6,7 @@ class item_score:
     def __init__(self,name, score):
         self.name = name
         self.score = score 
+        # use dictionary here
 
 class fuzzy_score:
     def __init__(self):
