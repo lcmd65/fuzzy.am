@@ -10,7 +10,6 @@ def plot_processing(array):
         i+= 1
 
 def parse_data(array):
-    i = 0
     for item in array.list:
         dict_temp ={}
         for item_2 in item.meta_data_lake_score:
