@@ -1,4 +1,3 @@
-import selenium as se
 from fuzzywuzzy import fuzz
 from solution.function.database_natural_lan import *
 
