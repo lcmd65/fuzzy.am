@@ -39,6 +39,6 @@ def parse_metadata_xml(ce_file):
         try:
             meta_temp.append(meta_data_xml(step.attrib.get('name'), step[1].text))
         except:
-            {}
+            print ("fail")
     return meta_temp
 

@@ -22,18 +22,3 @@ if __name__ == "__main__":
     
 # python3 function/visualize.py
 # tranfer a list to dictionary
-
-#structure of data (data ogarnize in program)
-# array.list {
-    # 
-        #med_data_db {
-            #meta_data_db.tag_name
-            #meta_data_db.meta_data_lake_score {
-                #item_score{
-                    #item_score.name
-                    #item_score.score
-                #}
-            #}
-        #}
-    #}
-#}
