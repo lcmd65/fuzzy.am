@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from function.function import *
+from function.function_define import *
 
 def plot_processing(array):
     p = plt.subplot(nrows = len(array.list), ncols =1)

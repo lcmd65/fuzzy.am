@@ -1,7 +1,7 @@
 import pymssql
 import pandas as pd
 import xml.etree.cElementTree as ET
-from function.string import * 
+from function.string_define import * 
 
 class meta_data_xml:
     def __init__(self, tag_name, actual_value):

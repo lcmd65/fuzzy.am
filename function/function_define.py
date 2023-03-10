@@ -1,5 +1,5 @@
 from fuzzywuzzy import fuzz
-from solution.function.database_natural_lan import *
+from function.database_natural_lan import *
 
 class item_score:
     def __init__(self,name, score):
