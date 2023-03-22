@@ -1,14 +1,16 @@
 import matplotlib.pyplot as plt
 from function.function_define import *
 
+# plot alist of element that ever list have score of full data in lake
 def plot_processing(array):
     p = plt.subplot(nrows = len(array.list), ncols =1)
     i = 0
     for item in array.list:
-        p[i].tittle(item.tag_name, fontsize=17)
+        p[i].title(item.tag_name, fontsize=17)
         p[i].plot(item.meta_data_lake_score, color = 'skyblue', linewidth=5)
         i+= 1
 
+# parse a data structure in array class
 def parse_data(array):
     for item in array.list:
         dict_temp ={}
@@ -16,9 +18,25 @@ def parse_data(array):
             dict_temp.update(item_2.name, item_2.score)
         print(item.tag_name, dict_temp)
 
+# raw score list of 1 element list
+def visualize_per_unit(list_temp):
+    dict_temp ={}
+    for item_2 in list_temp.meta_data_lake_score:
+        dict_temp.update(item_2.name, item_2.score)
+    
+    p = plt.plot(dict_temp.score, dict_temp.name, color = 'skyblue')
+    p.title(list_temp.tag_name, fontsize= 17)
+    p.save(list_temp.tag_name)
+    
+# making a loop for all data with visualize _per_unit 
+def loop_plot(array):
+    for item in array:
+        visualize_per_unit(item.list)
+
 if __name__ == "__main__":
     arr = processing()
     parse_data(arr)
     
 # python3 function/visualize.py
 # tranfer a list to dictionary
+
