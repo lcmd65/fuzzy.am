@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt 
 import threading
+from tkinter import messagebox
 from function.function_define import *
 
 # plot alist of element that ever list have score of full data in lake
@@ -36,12 +37,18 @@ def loopPlotAttributeScore(array):
 
 # Plotting a chart of a num of processing Attribute matching time
 def loopPlotProcessingTime():
-
-    
+    try:
+        p = plt.subplot(nrows = 10)
+        for index in range(10):
+            p[index].title('echo' + index)
+            p[index].plot(compareAfterImprovement(), fontsize = '17')
+            p.save("test/p"+index+".png")
+    except:
+        messagebox.show("error")
 
 if __name__ == "__main__":
-    arr = processing()
-    parse_data(arr)
+    arr = mainProcessing()
+    parseDataPhrase1(arr)
     
 # python3 function/visualize.py
 # tranfer a list to dictionary

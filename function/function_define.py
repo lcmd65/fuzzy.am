@@ -52,12 +52,10 @@ def mainProcessing():
 
 # function caculate time processing of main algorithms (expect < 1 min for all tasks)
 def compareAfterImprovement():
-    global list_file
+    list_file = []
     print("____________Start____________")
     start = time.time()
     mainProcessing()
     elapsed = time.time() - start
     list_file.append(elapsed) 
     return list_file
-
-
