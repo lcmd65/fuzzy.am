@@ -1,4 +1,5 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
+import threading
 from function.function_define import *
 
 # plot alist of element that ever list have score of full data in lake
@@ -11,7 +12,7 @@ def plot_processing(array):
         i+= 1
 
 # parse a data structure in array class
-def parse_data(array):
+def parseDataPhrase1(array):
     for item in array.list:
         dict_temp ={}
         for item_2 in item.meta_data_lake_score:
@@ -19,7 +20,7 @@ def parse_data(array):
         print(item.tag_name, dict_temp)
 
 # raw score list of 1 element list
-def visualize_per_unit(list_temp):
+def visualizePerUnit(list_temp):
     dict_temp ={}
     for item_2 in list_temp.meta_data_lake_score:
         dict_temp.update(item_2.name, item_2.score)
@@ -29,9 +30,14 @@ def visualize_per_unit(list_temp):
     p.save(list_temp.tag_name)
     
 # making a loop for all data with visualize _per_unit 
-def loop_plot(array):
+def loopPlotAttributeScore(array):
     for item in array:
-        visualize_per_unit(item.list)
+        visualizePerUnit(item.list)
+
+# Plotting a chart of a num of processing Attribute matching time
+def loopPlotProcessingTime():
+
+    
 
 if __name__ == "__main__":
     arr = processing()

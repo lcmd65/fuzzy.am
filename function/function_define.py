@@ -1,5 +1,6 @@
 from fuzzywuzzy import fuzz
 from function.database_natural_lan import *
+import time 
 
 class item_score:
     def __init__(self,name, score):
@@ -31,7 +32,7 @@ def fuzzy_attributes(meta_a, meta_b, alpha, beta): # unit caculate of fuzzy matc
     weight_b = fuzz(meta_a.value,meta_b.actual_value)
     return item_score((meta_b.tag_name, weight_a * alpha + weight_b * beta)/(alpha + beta))
 
-def processing(): # parsing and caculate score of fuzzy matching
+def main_processing(): # parsing and caculate score of fuzzy matching
     array_metadata_score = fuzzy_score()
     meta_controlplan = metadata_db_controlplan(370)
     meta_xml_1 = parse_metadata_xml(xml_global)
@@ -45,6 +46,13 @@ def processing(): # parsing and caculate score of fuzzy matching
     array_metadata_score.insertion_sort()
     return array_metadata_score
 
-
+def compareAfterImprovement():
+    global list_file
+    print("____________Start____________")
+    start = time.time()
+    main_processing()
+    elapsed = time.time() - start
+    list_file.append(elapsed) 
+    return list_file
 
 
