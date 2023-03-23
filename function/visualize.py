@@ -1,7 +1,17 @@
 import matplotlib.pyplot as plt 
 import threading
 from tkinter import messagebox
+from tkinter import *
 from function.function_define import *
+
+# set frame here
+class UIframe(Frame):
+    def __init__(self, Frame):
+        self.Frame = Frame
+    
+    def makingFrame(self):
+        self.title("fuzzy algorithm running frame")
+        self
 
 # plot alist of element that ever list have score of full data in lake
 def plot_processing(array):
@@ -45,6 +55,18 @@ def loopPlotProcessingTime():
             p.save("test/p"+index+".png")
     except:
         messagebox.show("error")
+
+# tkinterApplication
+def tkinterUiApplication():
+    example = Tk()
+    app = UIframe(example)
+    app.root()
+
+
+
+
+
+
 
 if __name__ == "__main__":
     arr = mainProcessing()
