@@ -1,5 +1,5 @@
 from fuzzywuzzy import fuzz
-from function.database_natural_lan import *
+from function.database_natural_lan import * # weight_element1, weight_element2
 import time 
 
 # item score define
@@ -36,16 +36,16 @@ def fuzzyAttributes(meta_a, meta_b, alpha, beta):
     return item_score((meta_b.tag_name, weight_a * alpha + weight_b * beta)/(alpha + beta))
 
 # parsing and caculate score of fuzzy matching
-def mainProcessing():
+def mainProcessing(weight_element1, weight_element2):
     array_metadata_score = fuzzy_score()
     meta_controlplan = metadata_db_controlplan(370)
     meta_xml_1 = parse_metadata_xml(xml_global)
     meta_xml_2 = parse_metadata_xml(xml_recipe)
     for item in meta_controlplan:
         for item_item in meta_xml_1:
-            item.meta_data_lake_score.append(fuzzyAttributes(item, item_item, 0.7, 0.3))
+            item.meta_data_lake_score.append(fuzzyAttributes(item, item_item, weight_element1, weight_element2))
         for item_item_2 in meta_xml_2:
-            item.meta_data_lake_score.append(fuzzyAttributes(item, item_item_2, 0.7, 0.3))
+            item.meta_data_lake_score.append(fuzzyAttributes(item, item_item_2, weight_element1, weight_element2))
         array_metadata_score.push_meta(item)
     array_metadata_score.insertion_sort()
     return array_metadata_score
@@ -55,7 +55,7 @@ def compareAfterImprovement():
     list_file = []
     print("____________Start____________")
     start = time.time()
-    mainProcessing()
+    mainProcessing(string_weight_element1, string_weight_element2s))
     elapsed = time.time() - start
     list_file.append(elapsed) 
     return list_file
