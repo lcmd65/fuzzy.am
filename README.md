@@ -6,7 +6,9 @@
 Python script, Fuzz Attributes Matching Al( Levenshtein distance), for finding metadata with attributes in data lake 
 
 # Fuzzy Attributes Matching
+## Fuzzy Logic and Boolean logic difference
+![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/23db81c1-0ac6-4883-8147-89124a10e8f5)
 
-https://lh4.googleusercontent.com/PpbLijfFXILhSU1gQtEo0zOo2fWPadcIIKVEqGeeY1JjLuz4Sxe5MawUzddfRCH1rbGKWPTp_ts3iXxjT-HaMD8UtgDBCH1Fwv2mC-jeBSqCfoJpBTwVJ_DjbLXuGYTdmu4FBdBx![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/59a462b7-ba47-42a3-9b34-0c8136599de8)
-
-
+## Fuzzy Matching( base ontology matching)
+State of the art of database and module lean management, matching
+![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/264408d8-a597-49a9-84fd-e7daf418bcb9)
