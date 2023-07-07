@@ -11,4 +11,5 @@ Python script, Fuzz Attributes Matching Al( Levenshtein distance), for finding m
 
 ## Fuzzy Matching( base ontology matching)
 State of the art of database and module lean management, matching
-![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/264408d8-a597-49a9-84fd-e7daf418bcb9)
+![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/f71ebccc-bbf2-49bc-a4d3-33a91cff2cb4)
+
