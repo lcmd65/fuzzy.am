@@ -14,3 +14,24 @@ Python script, Fuzz Attributes Matching Al( Levenshtein distance), for finding m
 State of the art of database and module lean management, matching
 ![image](https://github.com/DatMinhLeChon/fuzz.am/assets/93373784/f71ebccc-bbf2-49bc-a4d3-33a91cff2cb4)
 
+#### Algorithm
+    [1]	FUNCTION traverseTreeMatching(tree, depth, machine_param[], score_standard)
+    [2]		IF tree IS NULL THEN
+    [3]			FOREACH meta in machine_param
+    [4]				IF FUZZ(tree, meta) >= score_standard THEN
+    [5]					RETURN Map<tree,meta>
+    [6]				ELSE DO
+    [7]					FOREACH rule IN rule_container
+    [8]						IF rule(tree, meta) THEN
+    [9]							RETURN Map<tree, meta>
+    [10]							BREAK
+    [11]					END_IF
+    [12]					END_FOREACH
+    [13]				END_IF
+    [14]			END_FOREACH
+    [15]		ELSE DO
+    [16]			FOREACH child IN tree.Children
+    [17]				traverseTree(child, depth + 1)
+    [18]			END_FOREACH
+    [19]		END_IF
+
